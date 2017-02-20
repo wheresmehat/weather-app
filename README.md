@@ -2,5 +2,5 @@
 
 A simple weather forecast app
 
-Using google geocoding API and darksky weather API.
+With a little help from google geocoding API and darksky weather API, and promises. 
 
