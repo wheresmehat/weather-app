@@ -1,6 +1,6 @@
-# node-course-2-web-server
+# weather-app
 
-Testing node.js with express server. 
-Deployed on Heroku.
+A simple weather forecast app
 
-Check it out: https://guarded-caverns-24295.herokuapp.com/
+Using google geocoding API and darksky weather API.
+
