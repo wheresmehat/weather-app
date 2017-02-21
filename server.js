@@ -25,7 +25,7 @@ hbs.registerHelper("getCurrentYear", () => {
 
 app.get("/", (req, res) => {
 
-    if (errorCaught) {
+    /*if (errorCaught) {
 
         res.render("weather.hbs", {
 
@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
         });
 
         return;
-    }
+    }*/
 
     res.render("weather.hbs");
     
@@ -47,7 +47,7 @@ app.get("/place", (req, res) => {
     getWeather(inputAddress)
     .then((objFormatted) => {
 
-        errorCaught = false;
+        //errorCaught = false;
 
         res.render("weather.hbs", {
 
@@ -60,7 +60,7 @@ app.get("/place", (req, res) => {
 
         console.log("Final catch:", err);
 
-        errorCaught = true;
+        //errorCaught = true;
 
         res.redirect("/");
     });
