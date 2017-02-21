@@ -14,17 +14,21 @@
 
         <form action="/place" id="fileupload" method="GET">
             <label for="loc">Enter location</label>
-            <input type="text" id="loc" name="loc" placeholder="type address, city or ZIP">
+            <input type="text" id="loc" name="loc" placeholder="type address, city or ZIP" required>
             <br>
             <button type="submit" value="Submit">Submit</button>
         </form>
 
          <br>
 
-        {{> report}}
+        {{#if locationReport}}
+            {{> report}}
+        {{/if}}
 
-        {{> errorMess}}   
-
+        {{#if error}}
+            {{> errorMess}}  
+        {{/if}}
+         
         <p id="footer">Created by badamec - Copyright {{getCurrentYear}}</p>
 
     </body>

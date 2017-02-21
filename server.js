@@ -25,16 +25,6 @@ hbs.registerHelper("getCurrentYear", () => {
 
 app.get("/", (req, res) => {
 
-    /*if (errorCaught) {
-
-        res.render("weather.hbs", {
-
-            error: "Unable to find that address. Try again."
-        });
-
-        return;
-    }*/
-
     res.render("weather.hbs");
     
 });
@@ -47,8 +37,6 @@ app.get("/place", (req, res) => {
     getWeather(inputAddress)
     .then((objFormatted) => {
 
-        //errorCaught = false;
-
         res.render("weather.hbs", {
 
             locationReport: objFormatted.locationFormatted,
@@ -60,9 +48,17 @@ app.get("/place", (req, res) => {
 
         console.log("Final catch:", err);
 
-        //errorCaught = true;
+        var catchError = "Something went wrong. Please try again."
 
-        res.redirect("/");
+        if (err === "Unable to find that address." || err === "Unable to connect to API servers.") {
+
+            catchError = err;
+        }
+
+        res.render("weather.hbs", {
+
+            error: catchError
+        });
     });
   
 });
