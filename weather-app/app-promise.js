@@ -1,5 +1,7 @@
 const axios = require("axios");
 
+const tempConverter = require("./tempConverter");
+
 function getWeather(inputAddress) {
 
     return new Promise((resolve, reject) => {
@@ -42,7 +44,7 @@ function getWeather(inputAddress) {
                 precipProb: `Precipitation probability: ${response.data.currently.precipProbability}%`,
                 windSpeed: `Wind speed: ${(response.data.currently.windSpeed * 1.61).toFixed(1)} km/h`,
                 humidity: `Humidity: ${(response.data.currently.humidity * 100).toFixed(1)}%`,
-                forecast: `Forecast: ${response.data.daily.summary}`
+                forecast: `Forecast: ${tempConverter.convertFtoC(response.data.daily.summary)}`
 
             };
 
