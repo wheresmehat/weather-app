@@ -60,7 +60,7 @@ function getWeather(inputAddress) {
             }
             else {
 
-                reject("Error.", err.message);
+                reject(err.message);
             }
 
         });
