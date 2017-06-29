@@ -5,16 +5,17 @@
     <head>
         <meta charset="utf-8">
         <title>World weather</title>
-        {{> styles}}        
+        {{> styles}}
+        <link rel="stylesheet" href="css/skeleton.css">        
     </head>
 
     <body>
 
-        <h2>World weather</h2>
+        <h4>World weather</h4>
 
         <form action="/place" id="fileupload" method="GET">
             <label for="loc">Enter location</label>
-            <input type="text" id="loc" name="loc" placeholder="type address, city or ZIP" required>
+            <input class="u-full-width" type="text" id="loc" name="loc" placeholder="type address, city or ZIP" required>
             <br>
             <button type="submit" value="Submit">Submit</button>
         </form>
